@@ -1,3 +1,5 @@
+import TagButton from "./TagButton"
+
 export default function MainView() {
     return (
         <>
@@ -11,9 +13,9 @@ export default function MainView() {
             </nav>
             <div className="container">
                 <div className="tags">
-                    <button>Debugging</button>
-                    <button>Code review</button>
-                    <button>Documentation</button>
+                    <TagButton name="Debugging" />
+                    <TagButton name="Code review" />
+                    <TagButton name="Documentation" />
                 </div>
                 <div className="content">
                     <p>
