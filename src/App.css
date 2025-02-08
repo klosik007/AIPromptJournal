@@ -36,3 +36,12 @@ nav ul li a:hover {
   max-width: 720px;
 }
 
+.tagButton {
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.tagButton:hover {
+  background-color: #E12;
+}
