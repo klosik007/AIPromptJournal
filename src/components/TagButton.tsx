@@ -7,7 +7,7 @@ type TagButtonProps = {
 export default function TagButton({ name }: TagButtonProps) {
     return (
         <>
-            <span className="tagButton"><img src={close} /> {name}</span>
+            <span className="display-inline-flex tag-button"><img src={close} />{name}</span>
         </>
     )
 }

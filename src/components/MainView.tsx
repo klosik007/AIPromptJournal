@@ -18,7 +18,7 @@ const prompts: PromptObject[] = [
     {
         "title": "Use storytelling to learn 10x faster",
         "promptContent": "Turn key concepts about [Topic/Skill] into engaging stories or narratives to improve memorization and comprehension.",
-        "effectiveness": 5,
+        "effectiveness": 3,
         "tags": ["Documentation"]
     },
     {

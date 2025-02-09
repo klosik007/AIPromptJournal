@@ -36,13 +36,13 @@ nav ul li a:hover {
   max-width: 720px;
 }
 
-.tagButton {
+.display-inline-flex {
   display: inline-flex;
   justify-items: center;
   align-items: center;
 }
 
-.tagButton:hover {
+.tag-button:hover {
   background-color: #E12;
 }
 
@@ -50,4 +50,12 @@ nav ul li a:hover {
   border: 3px solid #E12;
   border-radius: 10px;
   margin-top: 10px;;
+}
+
+.box-content {
+  padding: 10px 10px 10px 10px;
+}
+
+.star-full:hover {
+  fill: #900;
 }
