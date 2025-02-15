@@ -1,14 +1,20 @@
 import PromptContent from "./PromptContent";
-import { Prompts } from "../types/Prompts";
 
-export default function PromptsInfo({ promptsContent }: Prompts) {
-  return promptsContent.map((prompt, index) => (
-    <PromptContent
-      key={index}
-      title={prompt.title}
-      promptContent={prompt.promptContent}
-      effectiveness={prompt.effectiveness}
-      tags={prompt.tags}
-    />
-  ));
+export default function PromptsInfo() {
+  const promptsContent = Object.keys(localStorage)
+
+  return promptsContent.map((promptKey, index) => { 
+    const promptJson = JSON.parse(localStorage.getItem(promptKey) ?? '')
+    console.log(promptJson)
+
+    return (
+      <PromptContent
+        key={index}
+        title={promptJson.title}
+        promptContent={promptJson.promptContent}
+        effectiveness={promptJson.effectiveness}
+        tags={promptJson.tags}
+      />
+    )
+    });
 }
