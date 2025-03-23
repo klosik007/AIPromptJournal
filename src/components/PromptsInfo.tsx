@@ -1,11 +1,12 @@
 import PromptContent from "./PromptContent";
 
-export default function PromptsInfo() {
-  const promptsContent = Object.keys(localStorage)
+type PromptsData = {
+  data: string[]
+}
 
-  return promptsContent.map((promptKey, index) => { 
-    const promptJson = JSON.parse(localStorage.getItem(promptKey) ?? '')
-    console.log(promptJson)
+export default function PromptsInfo({ data }: PromptsData) {
+  return data.map((promptData, index) => { 
+    const promptJson = JSON.parse(promptData ?? '')
 
     return (
       <PromptContent
