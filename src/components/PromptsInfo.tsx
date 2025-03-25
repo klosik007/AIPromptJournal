@@ -1,12 +1,12 @@
 import PromptContent from "./PromptContent";
 
 type PromptsData = {
-  data: string[]
-}
+  data: string[];
+};
 
 export default function PromptsInfo({ data }: PromptsData) {
-  return data.map((promptData, index) => { 
-    const promptJson = JSON.parse(promptData ?? '')
+  return data.map((promptData, index) => {
+    const promptJson = JSON.parse(promptData ?? "");
 
     return (
       <PromptContent
@@ -16,6 +16,6 @@ export default function PromptsInfo({ data }: PromptsData) {
         effectiveness={promptJson.effectiveness}
         tags={promptJson.tags}
       />
-    )
-    });
+    );
+  });
 }

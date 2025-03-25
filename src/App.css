@@ -3,7 +3,7 @@ nav ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #E12;
+  background-color: #e12;
   position: fixed;
   top: 0;
   width: 100%;
@@ -43,13 +43,13 @@ nav ul li a:hover {
 }
 
 .tag-button:hover {
-  background-color: #E12;
+  background-color: #e12;
 }
 
 .box {
-  border: 3px solid #E12;
+  border: 3px solid #e12;
   border-radius: 10px;
-  margin-top: 10px;;
+  margin-top: 10px;
 }
 
 .box-content {

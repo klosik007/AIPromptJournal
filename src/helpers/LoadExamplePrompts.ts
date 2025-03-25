@@ -32,16 +32,24 @@ const prompts: PromptObject[] = [
 ];
 
 function LoadExamplePrompts() {
-  let index = 0
+  let index = 0;
 
   for (const prompt of prompts) {
-      const item = localStorage.getItem(`prompt_${index}`)
-      
-      if (!item) {
-          localStorage.setItem(`prompt_${index}`, JSON.stringify({title: prompt.title, promptContent: prompt.promptContent, effectiveness: prompt.effectiveness, tags: prompt.tags}))
-          index++
-      }
+    const item = localStorage.getItem(`prompt_${index}`);
+
+    if (!item) {
+      localStorage.setItem(
+        `prompt_${index}`,
+        JSON.stringify({
+          title: prompt.title,
+          promptContent: prompt.promptContent,
+          effectiveness: prompt.effectiveness,
+          tags: prompt.tags,
+        }),
+      );
+      index++;
+    }
   }
 }
 
-export { LoadExamplePrompts }
+export { LoadExamplePrompts };

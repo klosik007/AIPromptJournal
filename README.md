@@ -9,4 +9,4 @@ Store the most powerful AI prompts in one place and manage them by tags and rate
 
 ## Versions
 
-No versions so far - development phase. 
+No versions so far - development phase.
