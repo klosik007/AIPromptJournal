@@ -7,14 +7,6 @@ const prompts: string[] = Object.values(localStorage);
 export default function MainView() {
   const [promptData, setPromptData] = useState(prompts);
 
-  function applyFilter(name: string) {
-    const dataFiltered = [...Object.values(localStorage)].filter(
-      (promptValue) => JSON.parse(promptValue ?? []).tags.includes(name),
-    );
-
-    setPromptData(dataFiltered);
-  }
-
   return (
     <>
       <nav>
@@ -37,15 +29,15 @@ export default function MainView() {
         <div className="tags">
           <TagButton
             name="Debugging"
-            onClick={(name) => () => applyFilter(name)}
+            updateData={setPromptData}
           />
           <TagButton
             name="Code review"
-            onClick={(name) => () => applyFilter(name)}
+            updateData={setPromptData}
           />
           <TagButton
             name="Documentation"
-            onClick={(name) => () => applyFilter(name)}
+            updateData={setPromptData}
           />
         </div>
         <div className="content">
