@@ -5,17 +5,21 @@ type PromptsData = {
 };
 
 export default function PromptsInfo({ data }: PromptsData) {
-  return data.map((promptData, index) => {
-    const promptJson = JSON.parse(promptData ?? "");
+  return (
+    <div>
+      {data.map((promptData, index) => {
+        const promptJson = JSON.parse(promptData ?? "");
 
-    return (
-      <PromptContent
-        key={index}
-        title={promptJson.title}
-        promptContent={promptJson.promptContent}
-        effectiveness={promptJson.effectiveness}
-        tags={promptJson.tags}
-      />
-    );
-  });
+        return (
+          <PromptContent
+            key={index}
+            title={promptJson.title}
+            promptContent={promptJson.promptContent}
+            effectiveness={promptJson.effectiveness}
+            tags={promptJson.tags}
+          />
+        );
+      })}
+    </div>
+  );
 }
