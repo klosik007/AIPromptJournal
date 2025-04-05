@@ -73,15 +73,16 @@ nav ul li a:hover {
   gap: 8px;
   justify-content: center;
   align-self: center;
+  background-color: #353232;
 }
 
 .content {
   height: 100%;
-  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin: 0 auto;
+  background-color: #353232;
 }
