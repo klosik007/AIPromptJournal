@@ -1,3 +1,4 @@
+import React from "react";
 import PromptContent from "./PromptContent";
 
 type PromptsData = {

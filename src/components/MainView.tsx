@@ -1,3 +1,4 @@
+import React from "react";
 import TagButton from "./TagButton";
 import PromptsInfo from "./PromptsInfo";
 import { useState } from "react";

@@ -1,6 +1,7 @@
+import React from "react";
 import { PromptObject } from "../types/Prompts";
 import starFilled from "../assets/starFilled.svg";
-import starEmpty from "../assets/startEmpty.svg";
+import starEmpty from "../assets/starEmpty.svg";
 
 type EffectivenessRatio = {
   effectivenessRate: number;
@@ -15,6 +16,7 @@ function Effectiveness({ effectivenessRate }: EffectivenessRatio) {
         <img
           key={index + 1}
           src={index + 1 > effectivenessRate ? starFilled : starEmpty}
+          alt=""
         />
       ))}
     </>
