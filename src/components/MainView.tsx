@@ -22,29 +22,31 @@ export default function MainView() {
           <li>
             <a href="">Tags</a>
           </li>
-          <li>
-            <a href="">Previous prompts</a>
-          </li>
+
         </ul>
       </nav>
-      <div className="container">
-        <div className="tags">
-          <TagButton
-            name="Debugging"
-            updateData={setPromptData}
-          />
-          <TagButton
-            name="Code review"
-            updateData={setPromptData}
-          />
-          <TagButton
-            name="Documentation"
-            updateData={setPromptData}
-          />
-        </div>
-        <div className="content">
-          <PromptsInfo data={promptData} />
-        </div>
+      <div className="header">
+        <img src={promptSuggestion} alt="" width="200" height="200" />
+        <h1>AI Prompt Journal</h1>
+        <p>Keep track of your AI prompts and their effectiveness.</p>
+        <p>Use tags to filter and organize your prompts.</p>
+      </div>
+      <div className="tags">
+        <TagButton
+          name="Debugging"
+          updateData={setPromptData}
+        />
+        <TagButton
+          name="Code review"
+          updateData={setPromptData}
+        />
+        <TagButton
+          name="Documentation"
+          updateData={setPromptData}
+        />
+      </div>
+      <div className="content">
+        <PromptsInfo data={promptData} />
       </div>
     </>
   );

@@ -35,10 +35,6 @@ nav ul li a:hover {
   justify-items: center;
 }
 
-.content {
-  max-width: 720px;
-}
-
 .display-inline-flex {
   display: inline-flex;
   justify-items: center;
@@ -53,6 +49,7 @@ nav ul li a:hover {
   border: 3px solid #e12;
   border-radius: 10px;
   margin-top: 10px;
+  width: 900px
 }
 
 .box-content {
@@ -61,4 +58,30 @@ nav ul li a:hover {
 
 .star-full:hover {
   fill: #900;
+}
+
+.header {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-self: center;
+}
+
+.content {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
 }

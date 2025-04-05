@@ -7,7 +7,7 @@ type PromptsData = {
 
 export default function PromptsInfo({ data }: PromptsData) {
   return (
-    <div>
+    <>
       {data.map((promptData, index) => {
         const promptJson = JSON.parse(promptData ?? "");
 
@@ -21,6 +21,6 @@ export default function PromptsInfo({ data }: PromptsData) {
           />
         );
       })}
-    </div>
+    </>
   );
 }
