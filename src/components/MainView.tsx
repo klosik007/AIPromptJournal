@@ -20,9 +20,11 @@ export default function MainView() {
             <a href="">New prompt</a>
           </li>
           <li>
+            <a href="">Edit prompts</a>
+          </li>
+          <li>
             <a href="">Tags</a>
           </li>
-
         </ul>
       </nav>
       <div className="header">
