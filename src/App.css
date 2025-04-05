@@ -3,14 +3,17 @@ nav ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #e12;
+  background-color: #242424;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 nav ul li {
   float: left;
+  margin-left: 16px;
 }
 
 nav ul li a {
@@ -22,11 +25,11 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: aqua;
+  background-color: #e12;
 }
 
 .container {
-  margin-top: 50px;
+  margin-top: 120px;
   display: block;
   position: relative;
   justify-items: center;
