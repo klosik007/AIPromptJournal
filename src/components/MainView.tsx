@@ -14,19 +14,30 @@ export default function MainView() {
       <nav>
         <ul>
           <li className="display-inline-flex">
-            <img src={promptSuggestion} alt="" /><a href="/">AI Prompt Journal</a>
+            <img src={promptSuggestion} alt="" /><span className="tag-button">AI Prompt Journal</span>
           </li>
-          <li>
-            <a href="">New prompt</a>
+          <li className="display-inline-flex">
+            <a href="#promptsModal" className="tag-button">Prompts</a>
           </li>
-          <li>
-            <a href="">Edit prompts</a>
-          </li>
-          <li>
-            <a href="">Tags</a>
+          <li className="display-inline-flex">
+            <a href="#tagsModal" className="tag-button">Tags</a>
           </li>
         </ul>
       </nav>
+      <div id="promptsModal" className="modal">
+        <div className="modalContent">
+          <a href="#" className="close">&times;</a>
+          <h2>Modal Header</h2>
+          <p>Prompts Modal</p>
+        </div>
+      </div>
+      <div id="tagsModal" className="modal">
+        <div className="modalContent">
+          <a href="#" className="close">&times;</a>
+          <h2>Modal Header</h2>
+          <p>Tags Modal</p>
+        </div>
+      </div>
       <div className="header">
         <img src={promptSuggestion} alt="" width="200" height="200" />
         <h1>AI Prompt Journal</h1>

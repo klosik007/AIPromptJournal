@@ -41,6 +41,19 @@ nav ul li a:hover {
   align-items: center;
 }
 
+.tag-button {
+  background-color: #242424;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 .tag-button:hover {
   background-color: #e12;
 }
@@ -85,4 +98,33 @@ nav ul li a:hover {
   text-align: center;
   margin: 0 auto;
   background-color: #353232;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal:not(:target) {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modalContent {
+  position: relative;
+  background-color: #353232;
+  padding: 4em 2em;
+}
+
+.close {
+  position: absolute;
+  top: -30px;
+  right: 0;
 }
