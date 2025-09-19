@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Dispatch, SetStateAction } from "react";
 import close from "../assets/close.svg";
 
@@ -10,19 +10,31 @@ type TagButtonProps = {
 export default function TagButton({ name, updateData }: TagButtonProps) {
   const [isActive, setIsActive] = useState(false);
 
+  useEffect(() => {
+    const selectedTags = JSON.parse(localStorage.getItem("selectedTags") || "[]");
+    setIsActive(selectedTags.includes(name));
+  }, [name]);
+
   function applyFilter() {
+    let selectedTags = JSON.parse(localStorage.getItem("selectedTags") || "[]");
+    if (isActive) {
+      selectedTags = selectedTags.filter((tag: string) => tag !== name);
+    } else {
+      selectedTags.push(name);
+    }
+    localStorage.setItem("selectedTags", JSON.stringify(selectedTags));
+    setIsActive(!isActive);
+
     const dataFiltered = [...Object.values(window.localStorage)].filter((promptValue) => {
       try {
         const parsedValue = JSON.parse(promptValue ?? "{}");
-        return parsedValue.tags?.includes(name);
+        return parsedValue.tags?.some((tag: string) => selectedTags.includes(tag));
       } catch (error) {
-        console.error("Invalid JSON in localStorage:", promptValue, error);
         return false;
       }
     });
-  
+
     updateData(dataFiltered);
-    setIsActive(!isActive);
   }
 
   return (
