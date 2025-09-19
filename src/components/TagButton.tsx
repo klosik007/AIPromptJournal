@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Dispatch, SetStateAction } from "react";
 import close from "../assets/close.svg";
 
@@ -8,6 +8,8 @@ type TagButtonProps = {
 };
 
 export default function TagButton({ name, updateData }: TagButtonProps) {
+  const [isActive, setIsActive] = useState(false);
+
   function applyFilter() {
     const dataFiltered = [...Object.values(window.localStorage)].filter((promptValue) => {
       try {
@@ -20,11 +22,12 @@ export default function TagButton({ name, updateData }: TagButtonProps) {
     });
   
     updateData(dataFiltered);
+    setIsActive(!isActive);
   }
 
   return (
     <>
-      <span id={name} className="display-inline-flex tag-button" onClick={applyFilter}>
+      <span id={name} className={isActive ? "display-inline-flex tag-button tag-button-active" : "display-inline-flex tag-button"} onClick={applyFilter}>
         <img src={close} alt="" />
         {name}
       </span>
