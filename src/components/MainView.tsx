@@ -4,7 +4,8 @@ import PromptsInfo from "./PromptsInfo";
 import promptSuggestion from "../assets/prompt_suggestion.svg";
 import { useState } from "react";
 
-const prompts: string[] = Object.values(localStorage);
+const promptKeys = Object.keys(localStorage).filter(key => key.includes("prompt_"));
+const prompts: string[] = Object.values(localStorage).filter((_, index) => promptKeys.includes(Object.keys(localStorage)[index]));
 
 export default function MainView() {
   const [promptData, setPromptData] = useState(prompts);

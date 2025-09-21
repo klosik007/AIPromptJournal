@@ -41,7 +41,7 @@ export default function PromptContent({
           </span>
           <span className="display-inline-flex">
             <b>Tags:</b>
-            <p>{tags.join(", ")}</p>
+            <p>{tags?.join(", ")}</p>
           </span>
         </div>
       </div>
