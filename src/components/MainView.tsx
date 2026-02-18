@@ -2,7 +2,7 @@ import React from "react";
 import TagButton from "./TagButton";
 import PromptsInfo from "./PromptsInfo";
 import promptSuggestion from "../assets/prompt_suggestion.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PromptsModal } from "./PromptsModal";
 import { TagsModal } from "./TagsModal";
 
@@ -11,9 +11,27 @@ const prompts: string[] = Object.values(localStorage).filter((_, index) => promp
 
 export default function MainView() {
   const [promptData, setPromptData] = useState(prompts);
+  const [tags, setTags] = useState<string[]>([]);
 
   const [promptsModalVisible, setPromptsModalVisible] = useState('none');
   const [tagsModalVisible, setTagsModalVisible] = useState('none');
+
+  useEffect(() => {
+    const storedTags = localStorage.getItem("tags");
+    if (storedTags) {
+      setTags(JSON.parse(storedTags));
+    } else {
+      const defaultTags = ["Debugging", "Code review", "Documentation"];
+      localStorage.setItem("tags", JSON.stringify(defaultTags));
+      setTags(defaultTags);
+    }
+  }, [tagsModalVisible]);
+
+  useEffect(() => {
+    const promptKeys = Object.keys(localStorage).filter(key => key.includes("prompt_"));
+    const prompts: string[] = Object.values(localStorage).filter((_, index) => promptKeys.includes(Object.keys(localStorage)[index]));
+    setPromptData(prompts);
+  }, [promptsModalVisible]);
 
   const showPromptsModal = () => {
     setPromptsModalVisible(promptsModalVisible === 'none' ? 'block' : 'none');
@@ -47,18 +65,13 @@ export default function MainView() {
         <p>Use tags to filter and organize your prompts.</p>
       </div>
       <div className="tags">
-        <TagButton
-          name="Debugging"
-          updateData={setPromptData}
-        />
-        <TagButton
-          name="Code review"
-          updateData={setPromptData}
-        />
-        <TagButton
-          name="Documentation"
-          updateData={setPromptData}
-        />
+        {tags.map((tag, index) => (
+          <TagButton
+            key={index}
+            name={tag}
+            updateData={setPromptData}
+          />
+        ))}
       </div>
       <div className="content">
         <PromptsInfo data={promptData} />
