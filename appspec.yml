@@ -1,9 +1,13 @@
 version: 0.0
 os: linux
 files:
-  - source: / 
+  - source: /
     destination: /var/www/aipromptjournal
 hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
   ApplicationStop:
     - location: scripts/stop_server.sh
       timeout: 60
